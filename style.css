@@ -173,23 +173,21 @@ body {
     font-family: var(--raleway);
 }
 
-.grid div button {
-    padding: 0.5rem 2rem;
-    border: none;
-    background: #40b340;
-    color: var(--inverse-text);
-    border-radius: 5px;
-    margin-top: 1rem;
-    font-weight: 600;
-}
-
 .button-content {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
-.button-content button {
+
+.button-content, .button_content button {
+    padding: 0.5rem 2rem;
+    border: none;
+    background: #40b340;
+    color: var(--inverse-text);
+    border-radius: 2px;
+    margin-top: 1rem;
+    font-weight: 600;
     margin-top: 1rem;
     font-family: var(--raleway);
     font-size: 1.5rem;
@@ -197,7 +195,7 @@ body {
     cursor: pointer;
 }
 
-.button-content button:hover {
+.button-content,.button_content button:hover {
     transform: scale(1.03);
     background-color: #56c556;
 }
@@ -210,3 +208,74 @@ body {
     margin: 0 auto;
 }
 
+/* Seção de Processo */
+
+.process {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 3rem;
+}
+
+.backdrop {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 700px;
+    background-color: var(--second-color);
+}
+
+.backdrop h2 {
+    font-size: 2rem;
+    color: var(--inverse-text);
+    font-family: var(--raleway);
+    margin-top: 3rem;
+}
+
+.grid-process {
+    position: relative;
+    top: -35rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem 0;
+}
+
+.box_, .box2_ {
+    width: 500px;
+    height: 500px;
+    color: var(--inverse-text);
+}
+
+.box_ > p, .box2_ > p {
+    padding: 0 2.5rem;
+    font-size: 1.5rem;
+    font-family: var(--glacial);
+    font-weight: 400;
+    text-align: justify;
+}
+
+.title-box {
+    font-family: var(--raleway);
+    color: var(--inverse-text);
+    font-size: 1.7rem;
+    font-weight: bold;
+    width: 100%;
+    padding-top: 15px;
+    text-align: center;
+    height: 50px;
+    margin: 0;
+    background-color: rgba(111, 0, 255, 0.253);
+}
+
+.box_ {
+    background-color: #AD7EFF;
+}
+.box2_ {
+    background-color: #9F69FF;
+}
+
+.button_content {
+    position: relative;
+    top: -33rem;
+}
