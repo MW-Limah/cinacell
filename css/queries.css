@@ -167,3 +167,13 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+@media (max-width: 450px) {
+  .logo {
+    width: 8rem;
+    height: auto;
+  }
+  .menu img {
+    transform: translateX(-20px);
+  }
+}
