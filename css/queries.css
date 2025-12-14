@@ -11,24 +11,6 @@
     display: none;
   }
 
-  .menu-btn {
-    background: none;
-    border: none;
-    display: block;
-    z-index: 2;
-  }
-
-  .menu-btn img {
-    display: block;
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .menu-btn img:hover {
-    transform: scale(1.12);
-  }
-
   .services {
     transform: translateY(-100px);
     height: 200px; /* melhor que 150px (evita cortar) */
@@ -169,13 +151,22 @@
 }
 
 @media (max-width: 768px) {
+  .menu {
+    display: none; /* some com o menu inteiro */
+  }
+
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-btn img {
+    width: 28px;
+    height: 28px;
+  }
+
   .logo {
     width: 8rem;
-    height: auto;
-  }
-  .menu img {
-    width: 25px;
-    height: 25px;
-    transform: translateX(-10px);
   }
 }
