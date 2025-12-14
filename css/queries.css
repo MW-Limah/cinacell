@@ -31,8 +31,9 @@
 
   .services {
     transform: translateY(-100px);
-    height: 150px;
-    margin: 0 0.5rem;
+    height: 200px; /* melhor que 150px (evita cortar) */
+    width: calc(100% - 1rem); /* margem pequena */
+    padding: 1rem;
   }
 
   .services h1 {
@@ -46,8 +47,7 @@
 
   .options h2 {
     font-size: 0.95rem;
-    padding-top: 10px;
-    height: 25px;
+    height: 30px;
   }
 
   .box,
@@ -75,6 +75,10 @@
 
   .main-content {
     margin-top: 2rem;
+  }
+
+  .main-content h1 {
+    font-size: 1.3rem;
   }
 
   .grid {
@@ -109,6 +113,10 @@
   }
   .ad3-img {
     grid-area: ad3-img;
+  }
+
+  .grid div h2 {
+    font-size: 1.2rem;
   }
 
   .grid div p {
@@ -151,13 +159,11 @@
   /*  footer */
 
   .footer {
-    margin: 0 20px;
     padding: 2rem 1rem;
   }
 
   .footer .info {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    padding: 0 2rem;
   }
 }
