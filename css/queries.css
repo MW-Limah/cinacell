@@ -12,9 +12,21 @@
   }
 
   .menu-btn {
+    background: none;
+    border: none;
     display: block;
-    width: 20px;
-    height: 20px;
+    z-index: 2;
+  }
+
+  .menu-btn img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-btn img:hover {
+    transform: scale(1.12);
   }
 
   .services {
@@ -29,19 +41,20 @@
   }
 
   .options {
-    transform: scaleY(-120px);
+    transform: translateY(-20px);
   }
 
   .options h2 {
     font-size: 0.95rem;
     padding-top: 10px;
+    height: 25px;
   }
 
   .box,
   .box2,
   .box3 {
-    width: 150px;
-    height: 150px;
+    width: 30dvw;
+    height: 25dvh;
   }
 
   .icon-div {
@@ -54,19 +67,97 @@
   .icon {
     object-fit: cover;
     aspect-ratio: 1/1;
-    width: 2rem;
-    height: 2rem;
+    width: 5rem;
+    height: 5rem;
   }
+
+  /* Main Content */
 
   .main-content {
-    display: none;
+    margin-top: 2rem;
   }
+
+  .grid {
+    margin: 0;
+    margin-top: -10px;
+    padding: 0 2rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "ad1"
+      "ad1-img"
+      "ad2"
+      "ad2-img"
+      "ad3"
+      "ad3-img";
+
+    gap: 1rem;
+  }
+  .ad1 {
+    grid-area: ad1;
+  }
+  .ad1-img {
+    grid-area: ad1-img;
+  }
+  .ad2 {
+    grid-area: ad2;
+  }
+  .ad2-img {
+    grid-area: ad2-img;
+  }
+  .ad3 {
+    grid-area: ad3;
+  }
+  .ad3-img {
+    grid-area: ad3-img;
+  }
+
+  .grid div p {
+    max-width: 100%;
+    font-size: 1rem;
+    font-family: var(--glacial);
+  }
+
+  .img-grid {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .backdrop {
+    height: 300dvh;
+  }
+  /* Seção de serviços */
 
   .process {
-    display: none;
+    margin-top: 2rem;
+  }
+  .grid-process {
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  footer {
-    display: none;
+  .box_,
+  .box2_ {
+    width: 80dvw;
+    height: 50dvh;
+    color: var(--inverse-text);
+  }
+
+  .title-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+
+  /*  footer */
+
+  .footer {
+    margin: 0 20px;
+    padding: 2rem 1rem;
+  }
+
+  .footer .info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 2rem;
   }
 }

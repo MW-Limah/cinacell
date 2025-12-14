@@ -24,6 +24,14 @@
 
   <body>
     <header class="header">
+      <aside class="menu-retratil" id="closed">
+        <ul>
+          <li><a href="">Início</a></li>
+          <li><a href="">Serviços</a></li>
+          <li><a href="">Vantagens</a></li>
+          <li><a href="">Contato</a></li>
+        </ul>
+      </aside>
       <nav class="navbar">
         <img class="logo" src="./img/logo.png" alt="Logo" />
         <ul class="menu">
@@ -31,29 +39,43 @@
           <li><a href="">Serviços</a></li>
           <li><a href="">Vantagens</a></li>
           <li><a href="">Contato</a></li>
-          <button class="menu-btn"><img src="./img/menu.png" alt="" />a</button>
+          <button onclick="toggleMenu()" class="menu-btn">
+            <img src="./img/menu.png" alt="logo" />
+          </button>
         </ul>
       </nav>
-      <img class="background" src="./img/background.jpg" alt="" />
+      <img
+        class="background"
+        src="./img/background.jpg"
+        alt="background repair cellphone"
+      />
       <section class="services">
         <h1>Serviços de qualidade sempre a sua disposição.</h1>
         <section class="options">
           <div class="box">
             <h2>Soldagem</h2>
             <div class="icon-div">
-              <img class="icon" src="./img/soldering.png" alt="" />
+              <img
+                class="icon"
+                src="./img/soldering.png"
+                alt="Soldering Machine Icon"
+              />
             </div>
           </div>
           <div class="box2">
             <h2>Troca de tela</h2>
             <div class="icon-div">
-              <img class="icon" src="./img/smartphone.png" alt="" />
+              <img
+                class="icon"
+                src="./img/smartphone.png"
+                alt="Broked Smartphone Icon"
+              />
             </div>
           </div>
           <div class="box3">
             <h2>Reparos internos</h2>
             <div class="icon-div">
-              <img class="icon" src="./img/repair.png" alt="" />
+              <img class="icon" src="./img/repair.png" alt="Repair Icon" />
             </div>
           </div>
         </section>
@@ -64,7 +86,7 @@
       <h1>Mas por que escolher meus serviços?</h1>
 
       <section class="grid">
-        <div>
+        <div class="ad1">
           <h2>1. Transparência</h2>
           <p>
             Tenho o compromisso de sempre sincera, honesta e totalmente
@@ -76,14 +98,14 @@
             <button>Entre em contato</button>
           </div>
         </div>
-        <div>
-          <img class="img-grid" src="./img/img1.jpg" alt="" />
+        <div class="ad1-img">
+          <img class="img-grid" src="./img/img1.jpg" alt="img 1" />
         </div>
 
-        <div>
-          <img class="img-grid" src="./img/img2.jpg" alt="" />
+        <div class="ad2-img">
+          <img class="img-grid" src="./img/img2.jpg" alt="img 2" />
         </div>
-        <div>
+        <div class="ad2">
           <h2>2. Trabalho com amor</h2>
           <p>
             Sou formada em Eletroeletrônica e Mecatrônica, áreas que me
@@ -97,7 +119,7 @@
           </div>
         </div>
 
-        <div>
+        <div class="ad3">
           <h2>3. Trabalho com amor</h2>
           <p>
             Minha jornada começou a partir de uma paixão genuína pela tecnologia
@@ -111,13 +133,14 @@
             <button>Entre em contato</button>
           </div>
         </div>
-        <div>
-          <img class="img-grid" src="./img/img3.jpg" alt="" />
+        <div class="ad3-img">
+          <img class="img-grid" src="./img/img3.jpg" alt="img 3" />
         </div>
       </section>
     </main>
     <section class="process">
-      <div class="backdrop"><h2>Como vamos trabalhar?</h2></div>
+      <div class="backdrop"></div>
+      <h2>Como vamos trabalhar?</h2>
       <section class="grid-process">
         <div class="box_">
           <h3 class="title-box">Entre em contato</h3>
@@ -166,7 +189,7 @@
     <footer>
       <section class="footer">
         <div class="headeer">
-          <img class="logo" src="./img/logo.png" alt="" />
+          <img class="logo" src="./img/logo.png" alt="logo" />
         </div>
         <div class="info">
           <div>
@@ -202,5 +225,16 @@
       </section>
       <div class="backdrop_"></div>
     </footer>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.querySelector(".menu-retratil");
+        if (menu.id === "closed") {
+          menu.id = "opened";
+        } else {
+          menu.id = "closed";
+        }
+      }
+    </script>
   </body>
 </html>
