@@ -168,12 +168,14 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   .logo {
     width: 8rem;
     height: auto;
   }
   .menu img {
-    transform: translateX(-20px);
+    width: 25px;
+    height: 25px;
+    transform: translateX(-50px);
   }
 }
