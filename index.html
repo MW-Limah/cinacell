@@ -41,7 +41,7 @@
           <li><a href="">Contato</a></li>
         </ul>
         <button onclick="toggleMenu()" class="menu-btn">
-          <img src="./img/menu.png" alt="menu" />
+          <img src="./img//menu.png" alt="Abrir Menu" id="menuImg" />
         </button>
       </nav>
       <img
@@ -229,10 +229,16 @@
     <script>
       function toggleMenu() {
         const menu = document.querySelector(".menu-retratil");
+        const toggleImg = document.getElementById("menuImg");
+
         if (menu.id === "closed") {
           menu.id = "opened";
+          toggleImg.src = "./img/close.png";
+          toggleImg.alt = "Fechar menu";
         } else {
           menu.id = "closed";
+          toggleImg.src = "./img/menu.png";
+          toggleImg.alt = "Abrir menu";
         }
       }
     </script>
