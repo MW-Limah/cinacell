@@ -142,6 +142,8 @@
 
   .footer {
     padding: 2rem 1rem;
+    margin-bottom: 0;
+    width: calc(100% - 1rem); /* margem pequena */
   }
 
   .footer .info {
