@@ -56,11 +56,12 @@
   /* Main Content */
 
   .main-content {
+    text-align: center;
     margin-top: 2rem;
   }
 
   .main-content h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .grid {
@@ -113,29 +114,42 @@
   }
 
   .backdrop {
-    height: 300dvh;
+    height: 200dvh;
   }
   /* Seção de serviços */
 
   .process {
     margin-top: 2rem;
   }
+  .process h2 {
+    font-size: 1.2rem;
+  }
   .grid-process {
     grid-template-columns: repeat(1, 1fr);
   }
 
+  .box_ > p,
+  .box2_ > p {
+    font-size: 1.1rem;
+  }
   .box_,
   .box2_ {
     width: 80dvw;
-    height: 50dvh;
+    height: 35dvh;
     color: var(--inverse-text);
+  }
+
+  .button_content button,
+  .button-content button {
+    font-size: 1rem;
   }
 
   .title-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 
   /*  footer */
