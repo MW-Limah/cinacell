@@ -16,6 +16,7 @@
     height: 200px; /* melhor que 150px (evita cortar) */
     width: calc(100% - 1rem); /* margem pequena */
     padding: 1rem;
+    margin-bottom: -5rem;
   }
 
   .services h1 {
@@ -36,7 +37,13 @@
   .box2,
   .box3 {
     width: 30dvw;
-    height: 25dvh;
+    height: 20dvh;
+  }
+
+  .box h2,
+  .box2 h2,
+  .box3 h2 {
+    font-size: 80%;
   }
 
   .icon-div {
