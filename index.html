@@ -38,22 +38,24 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header" id="top">
       <aside class="menu-retratil" id="closed">
         <ul>
-          <li><a href="">Início</a></li>
-          <li><a href="">Serviços</a></li>
-          <li><a href="">Vantagens</a></li>
-          <li><a href="">Contato</a></li>
+          <li><a href="#top">Início</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#advantages">Vantagens</a></li>
+          <li><a href="#workjourney">Como trabalhamos?</a></li>
+          <li><a href="#contact">Contato</a></li>
         </ul>
       </aside>
       <nav class="navbar">
         <img class="logo" src="./img/logo.png" alt="Logo" />
         <ul class="menu">
-          <li><a href="">Início</a></li>
-          <li><a href="">Serviços</a></li>
-          <li><a href="">Vantagens</a></li>
-          <li><a href="">Contato</a></li>
+          <li><a href="#top">Início</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#advantages">Vantagens</a></li>
+          <li><a href="#workjourney">Como trabalhamos?</a></li>
+          <li><a href="#contact">Contato</a></li>
         </ul>
         <button onclick="toggleMenu()" class="menu-btn">
           <img src="./img//menu.png" alt="Abrir Menu" id="menuImg" />
@@ -64,40 +66,40 @@
         src="./img/background.jpg"
         alt="background repair cellphone"
       />
-      <section class="services">
-        <h1>Serviços de qualidade sempre a sua disposição.</h1>
-        <section class="options">
-          <div class="box">
-            <h2>Soldagem</h2>
-            <div class="icon-div">
-              <img
-                class="icon"
-                src="./img/soldering.png"
-                alt="Soldering Machine Icon"
-              />
-            </div>
-          </div>
-          <div class="box2">
-            <h2>Troca de tela</h2>
-            <div class="icon-div">
-              <img
-                class="icon"
-                src="./img/smartphone.png"
-                alt="Broked Smartphone Icon"
-              />
-            </div>
-          </div>
-          <div class="box3">
-            <h2>Reparos internos</h2>
-            <div class="icon-div">
-              <img class="icon" src="./img/repair.png" alt="Repair Icon" />
-            </div>
-          </div>
-        </section>
-      </section>
     </header>
+    <section class="services" id="services">
+      <h1>Serviços de qualidade sempre a sua disposição.</h1>
+      <section class="options">
+        <div class="box">
+          <h2>Soldagem</h2>
+          <div class="icon-div">
+            <img
+              class="icon"
+              src="./img/soldering.png"
+              alt="Soldering Machine Icon"
+            />
+          </div>
+        </div>
+        <div class="box2">
+          <h2>Troca de tela</h2>
+          <div class="icon-div">
+            <img
+              class="icon"
+              src="./img/smartphone.png"
+              alt="Broked Smartphone Icon"
+            />
+          </div>
+        </div>
+        <div class="box3">
+          <h2>Reparos internos</h2>
+          <div class="icon-div">
+            <img class="icon" src="./img/repair.png" alt="Repair Icon" />
+          </div>
+        </div>
+      </section>
+    </section>
 
-    <main class="main-content">
+    <main class="main-content" id="advantages">
       <h1>Mas por que escolher meus serviços?</h1>
 
       <section class="grid">
@@ -153,7 +155,7 @@
         </div>
       </section>
     </main>
-    <section class="process">
+    <section class="process" id="workjourney">
       <div class="backdrop"></div>
       <h2>Como vamos trabalhar?</h2>
       <section class="grid-process">
@@ -201,7 +203,7 @@
         <button>Entre em contato</button>
       </div>
     </section>
-    <footer>
+    <footer id="contact">
       <section class="footer">
         <div class="headeer">
           <img class="logo" src="./img/logo.png" alt="logo" />
@@ -218,10 +220,10 @@
           <div>
             <h2>Mapa do site</h2>
             <ul>
-              <li><a href="">Início</a></li>
-              <li><a href="">Serviços</a></li>
-              <li><a href="">Vantagens</a></li>
-              <li><a href="">Como vamos trabalhar?</a></li>
+              <li><a href="#top">Início</a></li>
+              <li><a href="#services">Serviços</a></li>
+              <li><a href="#advantages">Vantagens</a></li>
+              <li><a href="#workjourney">Como vamos trabalhar?</a></li>
             </ul>
           </div>
           <div>
@@ -256,6 +258,117 @@
           toggleImg.alt = "Abrir menu";
         }
       }
+
+      const sectionIds = [
+        "top",
+        "services",
+        "advantages",
+        "workjourney",
+        "contact",
+      ];
+
+      const sections = sectionIds
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+
+      function setActiveLink(id) {
+        const allLinks = document.querySelectorAll(
+          '.navbar a[href^="#"], .menu-retratil a[href^="#"]'
+        );
+
+        allLinks.forEach((a) => a.classList.remove("active"));
+
+        document
+          .querySelectorAll(
+            `.navbar a[href="#${id}"], .menu-retratil a[href="#${id}"]`
+          )
+          .forEach((a) => a.classList.add("active"));
+      }
+
+      const navbar = document.querySelector(".navbar");
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+      const visibleMap = new Map();
+
+      const TOP_GAP = 5; // tolerância para topo
+      const BOTTOM_GAP = 10; // tolerância para final da página
+
+      function isAtPageTop() {
+        return window.scrollY <= TOP_GAP;
+      }
+
+      function isAtPageBottom() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const viewport = window.innerHeight;
+        const full = document.documentElement.scrollHeight;
+        return scrollY + viewport >= full - BOTTOM_GAP;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => visibleMap.set(e.target.id, e));
+
+          // ✅ TOPO DA PÁGINA
+          if (isAtPageTop()) {
+            setActiveLink("top");
+            return;
+          }
+
+          // ✅ FINAL DA PÁGINA
+          if (isAtPageBottom()) {
+            setActiveLink("contact");
+            return;
+          }
+
+          // comportamento normal
+          const visibles = Array.from(visibleMap.values()).filter(
+            (e) => e.isIntersecting
+          );
+          if (!visibles.length) return;
+
+          visibles.sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          );
+
+          setActiveLink(visibles[0].target.id);
+        },
+        {
+          root: null,
+          threshold: 0.01,
+          rootMargin: `-${navbarHeight + 5}px 0px -70% 0px`,
+        }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+
+      // ======= Scroll extra para topo/final (suaviza resposta) =======
+      let ticking = false;
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (ticking) return;
+          ticking = true;
+
+          requestAnimationFrame(() => {
+            if (isAtPageTop()) setActiveLink("top");
+            else if (isAtPageBottom()) setActiveLink("contact");
+            ticking = false;
+          });
+        },
+        { passive: true }
+      );
+
+      // marca ativo ao clicar
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        const id = a.getAttribute("href").slice(1);
+        if (sectionIds.includes(id)) setActiveLink(id);
+      });
+
+      // estado inicial
+      setActiveLink("top");
     </script>
   </body>
 </html>
